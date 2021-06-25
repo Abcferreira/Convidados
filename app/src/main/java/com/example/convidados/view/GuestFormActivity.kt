@@ -48,7 +48,7 @@ class GuestFormActivity : AppCompatActivity(), OnClickListener {
         val id = v?.id
         if (id == R.id.button_save) {
             val name = binding.editName.text.toString()
-            val presence = binding.raioPresent.isChecked
+            val presence = binding.radioPresent.isChecked
 
             mViewModel.save(name, presence)
 

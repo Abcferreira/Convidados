@@ -1,4 +1,4 @@
-package com.example.convidados
+package com.example.convidados.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,9 +9,9 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.convidados.R
 import com.example.convidados.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationView
-import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.appBarMain.toolbar)
 
-        binding.appBarMain.fab.setOnClickListener { startActivity(Intent(applicationContext, GuestFormActivity::class.java ))}
+        binding.appBarMain.fab.setOnClickListener { startActivity(Intent(applicationContext, GuestFormActivity::class.java )) }
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_main)

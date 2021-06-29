@@ -29,21 +29,6 @@ class GuestFormActivity : AppCompatActivity(), OnClickListener {
 
     }
 
-    private fun observe() {
-        mViewModel.saveGuest.observe(this, Observer {
-            if (it) {
-                Toast.makeText(applicationContext, "Sucesso", Toast.LENGTH_SHORT).show()
-            }else{
-                Toast.makeText(applicationContext, "Falha", Toast.LENGTH_SHORT).show()
-            }
-        })
-    }
-
-    private fun setListeners() {
-        binding.buttonSave.setOnClickListener(this)
-
-    }
-
     override fun onClick(v: View?) {
         val id = v?.id
         if (id == R.id.button_save) {
@@ -53,5 +38,21 @@ class GuestFormActivity : AppCompatActivity(), OnClickListener {
             mViewModel.save(name, presence)
 
         }
+    }
+
+    private fun observe() {
+        mViewModel.saveGuest.observe(this, Observer {
+            if (it) {
+                Toast.makeText(applicationContext, "Sucesso", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(applicationContext, "Falha", Toast.LENGTH_SHORT).show()
+            }
+            finish()
+        })
+    }
+
+    private fun setListeners() {
+        binding.buttonSave.setOnClickListener(this)
+
     }
 }

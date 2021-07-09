@@ -9,7 +9,7 @@ import com.example.convidados.service.model.GuestModel
 class GuestViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
 
     fun bind(guest: GuestModel){
-        val textName = itemView.findViewById<TextView>(R.id.textView2)
+        val textName = itemView.findViewById<TextView>(R.id.text_name)
         textName.text = guest.name
     }
 
